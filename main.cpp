@@ -1,14 +1,14 @@
-#include <iostream>
+п»ї#include <iostream>
 #include<string>
 
-template <typename T> concept ComplexConcept = requires(T value)//концепт
+template <typename T> concept ComplexConcept = requires(T value)//РєРѕРЅС†РµРїС‚
 {
 	{value.tostring() } -> std::same_as<std::string>;
 	{value.hash()} -> std::convertible_to<long>;
 	requires !std::has_virtual_destructor<T>::value;
 };
 
-//провкрка концепта
+//РїСЂРѕРІРєСЂРєР° РєРѕРЅС†РµРїС‚Р°
 class Complex {
 private:
 	short _n = 0;
@@ -33,7 +33,7 @@ void printComplexConcept(ComplexConcept auto& cc) {
 	std::cout << cc.hash();
 }
 
-// Проверка
+// РџСЂРѕРІРµСЂРєР°
 int main()
 {
 	Complex com = 5;
